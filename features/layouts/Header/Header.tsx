@@ -8,7 +8,7 @@ const Header = () => {
       <Image
         className="dark:invert"
         src="/svg/Logo.svg"
-        alt="Next.js logo"
+        alt="273* Logo"
         width={80}
         height={38}
         priority
