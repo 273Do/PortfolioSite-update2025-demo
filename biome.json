@@ -3,7 +3,7 @@
   "organizeImports": {
     "enabled": true
   },
-  
+
   "formatter": {
     "indentStyle": "space",
     "ignore": []
@@ -15,11 +15,13 @@
         "noUselessRename": "error"
       },
       "recommended": true,
-      "nursery": { "useSortedClasses": {
-        "level": "warn",
-        "fix": "safe",
-        "options": {}
-      } },
+      "nursery": {
+        "useSortedClasses": {
+          "level": "warn",
+          "fix": "safe",
+          "options": {}
+        }
+      },
       "correctness": {
         "noUnusedImports": "warn",
         "noUnusedVariables": "warn"
