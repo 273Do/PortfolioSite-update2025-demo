@@ -1,4 +1,4 @@
-export const ContentScreenLayout = async ({
+const ContentScreenLayout = async ({
   children,
   className,
 }: { children: React.ReactNode; className?: string }) => {
@@ -10,3 +10,5 @@ export const ContentScreenLayout = async ({
     </div>
   );
 };
+
+export default ContentScreenLayout;
