@@ -29,6 +29,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} scrollbar-hidden m-10 antialiased`}
       >
         <Layout.Header />
+        <Layout.ScrollProgressBar />
         {children}
       </body>
     </html>
