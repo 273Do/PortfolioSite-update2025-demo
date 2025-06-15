@@ -14,12 +14,10 @@ const Header = () => {
         priority
       />
       <div className="flex text-slate-50">
-        <Button variant="ghost" size="icon">
+        <Button variant="ghost" size="icon" className="cursor-pointer">
           <Sparkles />
         </Button>
-        <Button variant="ghost" className="text-xl">
-          MENU
-        </Button>
+        <p className="mt-1 cursor-pointer text-xl">MENU</p>
       </div>
     </div>
   );
