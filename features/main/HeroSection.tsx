@@ -1,13 +1,13 @@
 import ContentScreenLayout from "@/components/ContentScreenLayout";
-import DynamicSizeText from "@/components/DynamicSizeText";
+import * as AnimationText from "@/components/TextAnimation";
 
 const HeroSection = async () => {
   return (
     <ContentScreenLayout>
       <p className="right-0 mt-1 text-xl">Scroll</p>
-      <DynamicSizeText className="font-semibold leading-0">
+      <AnimationText.Reveal className="-mb-12 font-semibold leading-none">
         PORTFOLIO
-      </DynamicSizeText>
+      </AnimationText.Reveal>
     </ContentScreenLayout>
   );
 };

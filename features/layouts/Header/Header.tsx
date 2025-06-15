@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Header = () => {
   return (
-    <div className="fixed right-0 left-0 flex h-10 w-full items-center justify-between px-10 mix-blend-difference">
+    <div className="fixed right-0 left-0 z-100 flex h-10 w-full items-center justify-between px-10 mix-blend-difference">
       <Image
         className="dark:invert"
         src="/svg/Logo.svg"
