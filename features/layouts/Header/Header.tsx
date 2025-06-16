@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Header = () => {
   return (
-    <div className="fixed right-0 left-0 flex h-10 w-full items-center justify-between px-10 mix-blend-difference">
+    <div className="fixed right-0 left-0 z-100 flex h-10 w-full items-center justify-between px-10 mix-blend-difference">
       <Image
         className="dark:invert"
         src="/svg/Logo.svg"
@@ -14,12 +14,10 @@ const Header = () => {
         priority
       />
       <div className="flex text-slate-50">
-        <Button variant="ghost" size="icon">
+        <Button variant="ghost" size="icon" className="cursor-pointer">
           <Sparkles />
         </Button>
-        <Button variant="ghost" className="text-xl">
-          MENU
-        </Button>
+        <p className="mt-1 cursor-pointer text-xl">MENU</p>
       </div>
     </div>
   );
