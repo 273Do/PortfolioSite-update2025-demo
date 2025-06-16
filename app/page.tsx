@@ -1,10 +1,11 @@
-import HeroSection from "@/features/main/HeroSection";
+import * as Main from "@/features/main";
 
 export default async function Home() {
   return (
     <>
-      <HeroSection />
+      <Main.HeroSection />
       <div className="h-10" />
+      <Main.NoticeSection />
     </>
   );
 }

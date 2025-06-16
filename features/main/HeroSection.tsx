@@ -4,7 +4,7 @@ import * as AnimationText from "@/components/TextAnimation";
 const HeroSection = async () => {
   return (
     <ContentScreenLayout>
-      <p className="right-0 mt-1 text-lg">Scroll</p>
+      <p className="right-0 mt-1">Scroll</p>
       <AnimationText.Reveal className="-mb-12 font-semibold leading-none">
         PORTFOLIO
       </AnimationText.Reveal>
