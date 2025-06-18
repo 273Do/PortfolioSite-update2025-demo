@@ -2,7 +2,7 @@ import NoticeList from "./NoticeList";
 
 const NoticeSection = async () => {
   return (
-    <div className="flex w-full justify-between border">
+    <div className="flex w-full justify-between">
       <NoticeList />
     </div>
   );

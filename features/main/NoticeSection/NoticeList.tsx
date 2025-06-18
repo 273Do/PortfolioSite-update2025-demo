@@ -1,21 +1,72 @@
 "use client";
-import * as AnimationText from "@/components/TextAnimation";
 import { noticeItems } from "@/demo/noticesData";
+import { useGSAP } from "@gsap/react";
 import { format } from "date-fns";
+import gsap from "gsap";
+import SplitText from "gsap/SplitText";
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
+
+const splitNumber = (num: number): string[] => {
+  return num.toString().padStart(2, "0").split("");
+};
+
+gsap.registerPlugin(SplitText);
 
 const NoticeList = () => {
   const [selectNotice, setSelectNotice] = useState({
-    year: "25",
+    year: 25,
     description: "",
   });
+
+  const [prevYear, setPrevYear] = useState<number>(25);
+  const digitRefs = useRef<Array<HTMLSpanElement | null>>([]);
+
+  useGSAP(() => {
+    const oldDigits = splitNumber(prevYear);
+    const newDigits = splitNumber(selectNotice.year);
+
+    newDigits.forEach((digit, i) => {
+      if (digit !== oldDigits[i] && digitRefs.current[i]) {
+        const target = digitRefs.current[i];
+        if (!target) return;
+
+        const textInstance = SplitText.create(target, {
+          type: "chars",
+          onSplit: (self) => {
+            gsap.from(self.chars, {
+              duration: 0.6,
+              yPercent: 20,
+              ease: "power2.out",
+              stagger: 0.05,
+            });
+          },
+        });
+
+        return () => textInstance.revert();
+      }
+    });
+  }, [selectNotice.year, prevYear]);
   return (
     <>
       <div className="w-1/5">
-        <AnimationText.Dynamic className="-mt-2.5 font-semibold leading-none">
-          `{selectNotice.year}
-        </AnimationText.Dynamic>
+        <div className="-mt-4 flex items-center justify-start font-semibold text-[11vw] leading-none">
+          <div className="flex">
+            <p>`</p>
+            {splitNumber(selectNotice.year).map((digit, i) => (
+              <p
+                // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+                key={i}
+                ref={(el) => {
+                  digitRefs.current[i] = el;
+                }}
+                className="inline-block"
+              >
+                {digit}
+              </p>
+            ))}
+          </div>
+        </div>
       </div>
       <div className="flex w-1/2 flex-col gap-5 text-[16px]">
         <div className="scrollbar-hidden h-20 overflow-y-scroll">
@@ -27,10 +78,14 @@ const NoticeList = () => {
                 className="mb-2 flex items-start justify-between gap-3"
                 key={item.sys.id}
                 onMouseEnter={() => {
-                  setSelectNotice({
-                    year,
-                    description: item.description,
-                  });
+                  const newYear = Number(year);
+                  if (newYear !== selectNotice.year) {
+                    setPrevYear(selectNotice.year);
+                    setSelectNotice({
+                      year: newYear,
+                      description: item.description,
+                    });
+                  }
                 }}
               >
                 {item.url ? (
