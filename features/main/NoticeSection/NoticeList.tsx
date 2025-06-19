@@ -105,7 +105,7 @@ const NoticeList = () => {
             );
           })}
         </div>
-        <p>{selectNotice.description}</p>
+        <p className="h-20">{selectNotice.description}</p>
       </div>
     </>
   );
