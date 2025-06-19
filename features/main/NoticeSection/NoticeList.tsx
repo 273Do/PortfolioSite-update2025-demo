@@ -1,11 +1,11 @@
 "use client";
-import { noticeItems } from "@/demo/noticesData";
 import { useGSAP } from "@gsap/react";
 import { format } from "date-fns";
 import gsap from "gsap";
 import SplitText from "gsap/SplitText";
 import Link from "next/link";
 import { useRef, useState } from "react";
+import { noticeItems } from "@/demo/noticesData";
 
 const splitNumber = (num: number): string[] => {
   return num.toString().padStart(2, "0").split("");
@@ -55,7 +55,7 @@ const NoticeList = () => {
             <p>`</p>
             {splitNumber(selectNotice.year).map((digit, i) => (
               <p
-                // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+                // biome-ignore lint/suspicious/noArrayIndexKey: using index as key is acceptable here due to static digit rendering
                 key={i}
                 ref={(el) => {
                   digitRefs.current[i] = el;

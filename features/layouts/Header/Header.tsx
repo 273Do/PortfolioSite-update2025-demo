@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
 import { Sparkles } from "lucide-react";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 const Header = () => {
   return (
