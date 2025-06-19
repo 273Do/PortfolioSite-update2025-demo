@@ -6,6 +6,8 @@ export default async function Home() {
       <Main.HeroSection />
       <div className="h-10" />
       <Main.NoticeSection />
+      <div className="h-10" />
+      <Main.CreativeSection />
     </>
   );
 }
