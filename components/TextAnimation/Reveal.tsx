@@ -11,7 +11,10 @@ gsap.registerPlugin(SplitText, ScrambleTextPlugin);
 const Reveal = ({
   children,
   className,
-}: { children: React.ReactNode; className?: string }) => {
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
   const ref = useRef(null);
   useGSAP(() => {
     const split = SplitText.create(ref.current, {

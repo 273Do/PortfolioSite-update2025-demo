@@ -1,7 +1,10 @@
 const ContentScreenLayout = async ({
   children,
   className,
-}: { children: React.ReactNode; className?: string }) => {
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
   return (
     <div
       className={`flex h-[calc(100vh-5rem)] items-end mix-blend-difference ${className}`}
