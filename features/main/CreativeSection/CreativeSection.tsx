@@ -10,9 +10,14 @@ const CreativeSection = async () => {
           <p>Nice to meet you.</p>
         </div>
         <div className="w-4/5">
-          <AnimationText.Reveal className="-mb-12 font-semibold leading-none">
+          <AnimationText.ScrollReveal
+            scrub={true}
+            start="top bottom"
+            end="bottom 20%"
+            className="-mb-12 font-semibold leading-none"
+          >
             CREATIVE
-          </AnimationText.Reveal>
+          </AnimationText.ScrollReveal>
         </div>
         <ul className="mt-8">
           <li>Web Development</li>
@@ -36,9 +41,14 @@ const CreativeSection = async () => {
             </li>
           </ul>
           <div className="w-7/12">
-            <AnimationText.Reveal className="-mb-12 font-semibold leading-none">
+            <AnimationText.ScrollReveal
+              scrub={true}
+              start="top bottom"
+              end="bottom 80%"
+              className="-mb-12 font-semibold leading-none"
+            >
               WORK
-            </AnimationText.Reveal>
+            </AnimationText.ScrollReveal>
           </div>
         </div>
       </div>
