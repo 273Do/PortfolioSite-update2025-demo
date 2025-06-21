@@ -3,7 +3,7 @@ import * as AnimationText from "@/components/TextAnimation";
 
 const CreativeSection = async () => {
   return (
-    <ContentScreenLayout>
+    <ContentScreenLayout className="creative-section">
       <div className="w-full">
         <div className="flex w-full items-center justify-between">
           <AnimationText.ScrollBlinking start="top center">
@@ -13,20 +13,19 @@ const CreativeSection = async () => {
             <p>Nice to meet you.</p>
           </AnimationText.ScrollBlinking>
         </div>
-        <div className="w-4/5">
+        <div className="relative h-fit w-4/5">
           <AnimationText.ScrollReveal
-            scrub={true}
             start="top bottom"
             end="bottom 20%"
-            className="-mb-12 font-semibold text-stroke text-transparent leading-none"
+            className="pointer-events-none absolute top-0 left-0 font-bold text-stroke text-transparent leading-none"
           >
             CREATIVE
           </AnimationText.ScrollReveal>
           <AnimationText.ScrollLeftReveal
-            scrub={true}
-            start="top bottom"
+            start="top center"
             end="bottom 20%"
-            className="-mb-12 font-semibold leading-none"
+            trigger=".creative-section"
+            className="relative font-bold text-foreground leading-none"
           >
             CREATIVE
           </AnimationText.ScrollLeftReveal>
@@ -52,15 +51,22 @@ const CreativeSection = async () => {
               activities.
             </li>
           </ul>
-          <div className="w-7/12">
+          <div className="relative h-fit w-7/12">
             <AnimationText.ScrollReveal
-              scrub={true}
               start="top bottom"
               end="bottom 90%"
-              className="-mb-12 font-semibold text-stroke text-transparent leading-none"
+              className="-mb-12 absolute top-0 left-0 font-semibold text-stroke text-transparent leading-none"
             >
               WORK
             </AnimationText.ScrollReveal>
+            <AnimationText.ScrollLeftReveal
+              start="top bottom"
+              end="bottom 90%"
+              trigger=".creative-section"
+              className="-mb-12 relative font-semibold leading-none"
+            >
+              WORK
+            </AnimationText.ScrollLeftReveal>
           </div>
         </div>
       </div>
