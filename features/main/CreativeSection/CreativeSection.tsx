@@ -52,17 +52,17 @@ const CreativeSection = () => {
           <ul className="mt-4">
             <li>Web Development</li>
             <li>Fullstack</li>
-            <li>Design</li>
             <li>UI / UX</li>
+            <li>Design</li>
           </ul>
         </AnimationText.ScrollBlinking>
       </div>
       <div className="w-full">
         <AnimationText.ScrollBlinking start="bottom bottom">
           <ul className="text-end">
-            <li>Sensor Analysis</li>
-            <li>Cloud Platform</li>
             <li>ML</li>
+            <li>Cloud Platform</li>
+            <li>Sensor Analysis</li>
           </ul>
         </AnimationText.ScrollBlinking>
         <div className="flex w-full items-end justify-between">
