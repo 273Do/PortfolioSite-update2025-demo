@@ -22,14 +22,14 @@ const CreativeSection = async () => {
           >
             CREATIVE
           </AnimationText.ScrollReveal>
-          <AnimationText.ScrollReveal
+          <AnimationText.ScrollLeftReveal
             scrub={true}
             start="top bottom"
             end="bottom 20%"
             className="-mb-12 font-semibold leading-none"
           >
             CREATIVE
-          </AnimationText.ScrollReveal>
+          </AnimationText.ScrollLeftReveal>
         </div>
         <ul className="mt-4">
           <li>Web Development</li>
