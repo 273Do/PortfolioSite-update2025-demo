@@ -13,18 +13,18 @@ const ScrollLeftReveal = ({
   start,
   end,
   scrub = false,
+  trigger,
 }: {
   children: string;
   className?: string;
   start?: string;
   end?: string;
   scrub?: boolean;
+  trigger?: string | Element | null;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    if (!ref.current) return;
-
     gsap.fromTo(
       ref.current,
       {
@@ -32,9 +32,8 @@ const ScrollLeftReveal = ({
       },
       {
         clipPath: "inset(0 0% 0 0)", // 全表示
-        // duration: 1,
         scrollTrigger: {
-          trigger: ref.current,
+          trigger: trigger || ref.current,
           start,
           end,
           scrub,

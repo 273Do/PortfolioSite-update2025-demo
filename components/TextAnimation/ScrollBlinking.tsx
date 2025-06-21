@@ -12,12 +12,14 @@ const ScrollBlinking = ({
   scrub = false,
   start,
   end,
+  trigger,
 }: {
   children: React.ReactNode;
   className?: string;
   scrub?: boolean;
   start: string;
   end?: string;
+  trigger: string | Element | null;
 }) => {
   const ref = useRef(null);
   useGSAP(() => {
@@ -34,7 +36,7 @@ const ScrollBlinking = ({
           gsap.set(ref.current, { opacity: 1 });
         },
         scrollTrigger: {
-          trigger: ref.current,
+          trigger: trigger || ref.current,
           scrub,
           start,
           end,

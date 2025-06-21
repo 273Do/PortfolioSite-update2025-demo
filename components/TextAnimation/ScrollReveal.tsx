@@ -14,12 +14,14 @@ const ScrollReveal = ({
   scrub = false,
   start,
   end,
+  trigger,
 }: {
   children: React.ReactNode;
   className?: string;
   scrub?: boolean;
   start: string;
   end?: string;
+  trigger?: string | Element | null;
 }) => {
   const ref = useRef(null);
   useGSAP(() => {
@@ -37,7 +39,7 @@ const ScrollReveal = ({
       stagger: 0.07,
       ease: "expo.out",
       scrollTrigger: {
-        trigger: ref.current,
+        trigger: trigger || ref.current,
         scrub,
         start,
         end,
