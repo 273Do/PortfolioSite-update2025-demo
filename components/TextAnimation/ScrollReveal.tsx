@@ -38,9 +38,9 @@ const ScrollReveal = ({
       ease: "expo.out",
       scrollTrigger: {
         trigger: ref.current,
-        scrub: scrub,
-        start: start,
-        end: end,
+        scrub,
+        start,
+        end,
         markers: true,
         toggleActions: "play none none reverse",
       },
