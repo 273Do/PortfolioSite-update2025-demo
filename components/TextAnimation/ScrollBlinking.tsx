@@ -17,7 +17,7 @@ const ScrollBlinking = ({
   children: React.ReactNode;
   className?: string;
   scrub?: boolean;
-  start: string;
+  start?: string;
   end?: string;
   trigger?: string | Element | null;
 }) => {
