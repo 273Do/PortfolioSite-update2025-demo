@@ -43,7 +43,7 @@ const ScrollReveal = ({
         scrub,
         start,
         end,
-        markers: true,
+        markers: false,
         toggleActions: "play none none reverse",
       },
     });

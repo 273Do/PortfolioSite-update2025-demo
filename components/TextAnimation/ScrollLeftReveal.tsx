@@ -48,8 +48,8 @@ const ScrollLeftReveal = ({
           scrub,
           start,
           end,
-          markers: true,
-          toggleActions: "play none none reverse",
+          markers: false,
+          toggleActions: "play none one reverse",
         },
       },
     );
