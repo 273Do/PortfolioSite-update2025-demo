@@ -126,3 +126,7 @@
     display: none;
   }
 }
+
+.text-stroke {
+  -webkit-text-stroke: 1px var(--foreground);
+}
