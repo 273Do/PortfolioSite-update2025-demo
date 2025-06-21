@@ -21,7 +21,7 @@ const CreativeSection = () => {
   }, []);
 
   return (
-    <ClientLayout className="creative-section bg-slate-700">
+    <ClientLayout className="creative-section">
       <div className="w-full">
         <div className="flex w-full items-center justify-between">
           <AnimationText.ScrollBlinking start="top center">
@@ -40,35 +40,41 @@ const CreativeSection = () => {
             CREATIVE
           </AnimationText.ScrollReveal>
           <AnimationText.ScrollLeftReveal
-            start="bottom bottom"
+            start="bottom 85%"
             end="bottom center"
-            trigger=".creative-section"
             className="relative font-semibold text-foreground leading-none"
+            trigger=".creative-section"
           >
             CREATIVE
           </AnimationText.ScrollLeftReveal>
         </div>
-        <ul className="mt-4">
-          <li>Web Development</li>
-          <li>Fullstack</li>
-          <li>Design</li>
-          <li>UI / UX</li>
-        </ul>
+        <AnimationText.ScrollBlinking start="top center">
+          <ul className="mt-4">
+            <li>Web Development</li>
+            <li>Fullstack</li>
+            <li>Design</li>
+            <li>UI / UX</li>
+          </ul>
+        </AnimationText.ScrollBlinking>
       </div>
       <div className="w-full">
-        <ul className="text-end">
-          <li>Sensor Analysis</li>
-          <li>Cloud Platform</li>
-          <li>ML</li>
-        </ul>
-        <div className="flex w-full items-end justify-between">
-          <ul>
-            <li>I develop web apps and tools as a hobby.</li>
-            <li>
-              I am based in the Kansai region and am involved in creative
-              activities.
-            </li>
+        <AnimationText.ScrollBlinking start="bottom bottom">
+          <ul className="text-end">
+            <li>Sensor Analysis</li>
+            <li>Cloud Platform</li>
+            <li>ML</li>
           </ul>
+        </AnimationText.ScrollBlinking>
+        <div className="flex w-full items-end justify-between">
+          <AnimationText.ScrollBlinking start="top 95%">
+            <ul>
+              <li>I develop web apps and tools as a hobby.</li>
+              <li>
+                I am based in the Kansai region and am involved in creative
+                activities.
+              </li>
+            </ul>
+          </AnimationText.ScrollBlinking>
           <div className="relative h-fit w-7/12">
             <AnimationText.ScrollReveal
               start="top bottom"
@@ -80,8 +86,8 @@ const CreativeSection = () => {
             <AnimationText.ScrollLeftReveal
               start="bottom center"
               end="bottom top"
-              trigger=".creative-section"
               className="-mb-12 relative font-semibold leading-none"
+              trigger=".creative-section"
             >
               WORK
             </AnimationText.ScrollLeftReveal>
