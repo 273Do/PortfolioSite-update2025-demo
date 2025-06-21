@@ -6,10 +6,22 @@ const CreativeSection = async () => {
     <ContentScreenLayout>
       <div className="w-full">
         <div className="flex w-full items-center justify-between">
-          <p>Hi, I am 273Do(Tuna-sand). </p>
-          <p>Nice to meet you.</p>
+          <AnimationText.ScrollBlinking start="top center">
+            <p>Hi, I am 273Do(Tuna-sand). </p>
+          </AnimationText.ScrollBlinking>
+          <AnimationText.ScrollBlinking start="top 40%">
+            <p>Nice to meet you.</p>
+          </AnimationText.ScrollBlinking>
         </div>
         <div className="w-4/5">
+          <AnimationText.ScrollReveal
+            scrub={true}
+            start="top bottom"
+            end="bottom 20%"
+            className="-mb-12 font-semibold text-stroke text-transparent leading-none"
+          >
+            CREATIVE
+          </AnimationText.ScrollReveal>
           <AnimationText.ScrollReveal
             scrub={true}
             start="top bottom"
@@ -19,7 +31,7 @@ const CreativeSection = async () => {
             CREATIVE
           </AnimationText.ScrollReveal>
         </div>
-        <ul className="mt-8">
+        <ul className="mt-4">
           <li>Web Development</li>
           <li>Fullstack</li>
           <li>Design</li>
@@ -44,8 +56,8 @@ const CreativeSection = async () => {
             <AnimationText.ScrollReveal
               scrub={true}
               start="top bottom"
-              end="bottom 80%"
-              className="-mb-12 font-semibold leading-none"
+              end="bottom 90%"
+              className="-mb-12 font-semibold text-stroke text-transparent leading-none"
             >
               WORK
             </AnimationText.ScrollReveal>
