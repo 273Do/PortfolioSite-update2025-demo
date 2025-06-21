@@ -1,9 +1,27 @@
-import ContentScreenLayout from "@/components/ContentScreenLayout";
+"use client";
+
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import ClientLayout from "@/components/ContentScreenLayout/ClientLayout";
 import * as AnimationText from "@/components/TextAnimation";
 
-const CreativeSection = async () => {
+gsap.registerPlugin(ScrollTrigger);
+
+const CreativeSection = () => {
+  useGSAP(() => {
+    ScrollTrigger.create({
+      trigger: ".creative-section",
+      start: "top 40px",
+      end: "bottom 40px",
+      pin: true,
+      scrub: true,
+      markers: false,
+    });
+  }, []);
+
   return (
-    <ContentScreenLayout className="creative-section">
+    <ClientLayout className="creative-section bg-slate-700">
       <div className="w-full">
         <div className="flex w-full items-center justify-between">
           <AnimationText.ScrollBlinking start="top center">
@@ -17,15 +35,15 @@ const CreativeSection = async () => {
           <AnimationText.ScrollReveal
             start="top bottom"
             end="bottom 20%"
-            className="pointer-events-none absolute top-0 left-0 font-bold text-stroke text-transparent leading-none"
+            className="pointer-events-none absolute top-0 left-0 font-semibold text-stroke text-transparent leading-none"
           >
             CREATIVE
           </AnimationText.ScrollReveal>
           <AnimationText.ScrollLeftReveal
-            start="top center"
-            end="bottom 20%"
+            start="bottom bottom"
+            end="bottom center"
             trigger=".creative-section"
-            className="relative font-bold text-foreground leading-none"
+            className="relative font-semibold text-foreground leading-none"
           >
             CREATIVE
           </AnimationText.ScrollLeftReveal>
@@ -54,14 +72,14 @@ const CreativeSection = async () => {
           <div className="relative h-fit w-7/12">
             <AnimationText.ScrollReveal
               start="top bottom"
-              end="bottom 90%"
+              end="bottom 70%"
               className="-mb-12 absolute top-0 left-0 font-semibold text-stroke text-transparent leading-none"
             >
               WORK
             </AnimationText.ScrollReveal>
             <AnimationText.ScrollLeftReveal
-              start="top bottom"
-              end="bottom 90%"
+              start="bottom center"
+              end="bottom top"
               trigger=".creative-section"
               className="-mb-12 relative font-semibold leading-none"
             >
@@ -70,7 +88,7 @@ const CreativeSection = async () => {
           </div>
         </div>
       </div>
-    </ContentScreenLayout>
+    </ClientLayout>
   );
 };
 
