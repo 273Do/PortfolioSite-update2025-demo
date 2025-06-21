@@ -1,18 +1,27 @@
 "use client";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import SplitText from "gsap/SplitText";
 import { useRef } from "react";
 import { ReactFitty } from "react-fitty";
 
-gsap.registerPlugin(SplitText);
+gsap.registerPlugin(SplitText, ScrollTrigger);
 
-const Reveal = ({
+const ScrollReveal = ({
   children,
   className,
+  scrub = true,
+  start,
+  end,
+  trigger,
 }: {
   children: React.ReactNode;
   className?: string;
+  scrub?: boolean;
+  start: string;
+  end?: string;
+  trigger?: string | Element | null;
 }) => {
   const ref = useRef(null);
   useGSAP(() => {
@@ -29,7 +38,19 @@ const Reveal = ({
       yPercent: 100,
       stagger: 0.07,
       ease: "expo.out",
+      scrollTrigger: {
+        trigger: trigger || ref.current,
+        scrub,
+        start,
+        end,
+        markers: false,
+        toggleActions: "play none none reverse",
+      },
     });
+
+    return () => {
+      split.revert();
+    };
   }, []);
   return (
     <ReactFitty ref={ref} className={`${className} opacity-0`}>
@@ -38,4 +59,4 @@ const Reveal = ({
   );
 };
 
-export default Reveal;
+export default ScrollReveal;

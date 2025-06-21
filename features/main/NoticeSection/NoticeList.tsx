@@ -50,7 +50,7 @@ const NoticeList = () => {
   return (
     <>
       <div className="w-1/5">
-        <div className="-mt-4 flex items-center justify-start font-semibold text-[11vw] leading-none">
+        <div className="-mt-2 flex items-center justify-start font-semibold text-[11vw] leading-none">
           <div className="flex">
             <p>`</p>
             {splitNumber(selectNotice.year).map((digit, i) => (
@@ -69,13 +69,13 @@ const NoticeList = () => {
         </div>
       </div>
       <div className="flex w-1/2 flex-col gap-5 text-[16px]">
-        <div className="scrollbar-hidden h-20 overflow-y-scroll">
+        <div>
           {noticeItems.map((item) => {
             const year = format(new Date(item.createdAt), "yy");
             const createdAt = format(new Date(item.createdAt), "yyyy-MM-dd");
             return (
               <ul
-                className="mb-2 flex cursor-auto items-start justify-between gap-3 text-muted-foreground duration-150 hover:text-foreground"
+                className={`${selectNotice.description === item.description ? "text-foreground" : "text-muted"} mb-2 flex cursor-auto items-start justify-between gap-3 duration-150 hover:text-foreground`}
                 key={item.sys.id}
                 onMouseEnter={() => {
                   const newYear = Number(year);
@@ -105,7 +105,7 @@ const NoticeList = () => {
             );
           })}
         </div>
-        <p>{selectNotice.description}</p>
+        <p className="h-20">{selectNotice.description}</p>
       </div>
     </>
   );

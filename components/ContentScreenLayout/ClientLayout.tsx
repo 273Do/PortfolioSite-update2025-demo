@@ -1,4 +1,4 @@
-const ContentScreenLayout = async ({
+const ClientLayout = ({
   children,
   className,
 }: {
@@ -16,4 +16,4 @@ const ContentScreenLayout = async ({
   );
 };
 
-export default ContentScreenLayout;
+export default ClientLayout;

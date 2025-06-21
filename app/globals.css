@@ -126,3 +126,15 @@
     display: none;
   }
 }
+
+/* ボーダーテキスト */
+.text-stroke {
+  -webkit-text-stroke: 1px var(--foreground);
+}
+
+/* スプリットテキスト調整 */
+.split-char {
+  display: inline-block;
+  vertical-align: baseline;
+  line-height: 1;
+}

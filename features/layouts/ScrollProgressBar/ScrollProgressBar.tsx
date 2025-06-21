@@ -22,10 +22,10 @@ const ScrollProgressBar = () => {
     });
   }, []);
   return (
-    <div className="fixed top-2/5 h-18 w-1 rounded-2xl bg-muted mix-blend-difference">
+    <div className="fixed top-9/20 left-4 h-18 w-1 rounded-2xl bg-muted mix-blend-difference">
       <div
         ref={progressBarRef}
-        className="h-full rounded-2xl bg-slate-50"
+        className="h-full rounded-2xl bg-foreground"
         style={{ height: "0%" }}
       />
     </div>
