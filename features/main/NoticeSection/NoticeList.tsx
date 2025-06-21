@@ -75,7 +75,7 @@ const NoticeList = () => {
             const createdAt = format(new Date(item.createdAt), "yyyy-MM-dd");
             return (
               <ul
-                className="mb-2 flex cursor-auto items-start justify-between gap-3 text-muted-foreground duration-150 hover:text-foreground"
+                className={`${selectNotice.description === item.description ? "text-foreground" : "text-muted"} mb-2 flex cursor-auto items-start justify-between gap-3 duration-150 hover:text-foreground`}
                 key={item.sys.id}
                 onMouseEnter={() => {
                   const newYear = Number(year);
