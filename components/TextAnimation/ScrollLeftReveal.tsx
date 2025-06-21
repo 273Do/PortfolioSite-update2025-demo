@@ -12,7 +12,7 @@ const ScrollLeftReveal = ({
   className,
   start,
   end,
-  scrub = false,
+  scrub = true,
   trigger,
 }: {
   children: string;

@@ -11,7 +11,7 @@ gsap.registerPlugin(SplitText, ScrollTrigger);
 const ScrollReveal = ({
   children,
   className,
-  scrub = false,
+  scrub = true,
   start,
   end,
   trigger,

@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 const ScrollBlinking = ({
   children,
   className,
-  scrub = false,
+  scrub = true,
   start,
   end,
   trigger,
@@ -19,7 +19,7 @@ const ScrollBlinking = ({
   scrub?: boolean;
   start: string;
   end?: string;
-  trigger: string | Element | null;
+  trigger?: string | Element | null;
 }) => {
   const ref = useRef(null);
   useGSAP(() => {
