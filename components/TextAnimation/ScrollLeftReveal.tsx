@@ -2,10 +2,11 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import SplitText from "gsap/SplitText";
 import { useRef } from "react";
 import { ReactFitty } from "react-fitty";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(SplitText, ScrollTrigger);
 
 const ScrollLeftReveal = ({
   children,
@@ -25,23 +26,37 @@ const ScrollLeftReveal = ({
   const ref = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
+    const split = SplitText.create(ref.current, {
+      type: "chars",
+      autoSplit: true,
+    });
+
+    // ズレをなくすために style を各 span に適用
+    split.chars.forEach((char) => {
+      char.classList.add("split-char");
+    });
+
     gsap.fromTo(
       ref.current,
       {
-        clipPath: "inset(0 100% 0 0)", // 右から隠す
+        clipPath: "inset(0 100% 0 0)",
       },
       {
-        clipPath: "inset(0 0% 0 0)", // 全表示
+        clipPath: "inset(0 0% 0 0)",
         scrollTrigger: {
           trigger: trigger || ref.current,
+          scrub,
           start,
           end,
-          scrub,
+          markers: true,
           toggleActions: "play none none reverse",
-          markers: false,
         },
       },
     );
+
+    return () => {
+      split.revert();
+    };
   }, []);
 
   return (

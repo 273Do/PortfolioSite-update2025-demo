@@ -47,6 +47,10 @@ const ScrollReveal = ({
         toggleActions: "play none none reverse",
       },
     });
+
+    return () => {
+      split.revert();
+    };
   }, []);
   return (
     <ReactFitty ref={ref} className={`${className} opacity-0`}>
