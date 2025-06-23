@@ -63,7 +63,7 @@ const CardList = () => {
       }
 
       gsap.to(".line", {
-        yPercent: 50,
+        yPercent: 100,
         ease: "power2.out",
         scrollTrigger: {
           trigger: ref.current,

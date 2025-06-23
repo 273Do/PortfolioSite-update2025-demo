@@ -1,17 +1,50 @@
+import MarqueeWidget from "@/components/Marquee/Marquee";
+
 const Skills = async () => {
   return (
-    <div className="my-10">
+    <div className="my-4">
       <p className="text-end">Favorite Technology</p>
-      <ul className="flex h-30 w-full items-center gap-20 bg-slate-700">
-        <li>icon</li>
-        <li>icon</li>
-        <li>icon</li>
-        <li>icon</li>
-        <li>icon</li>
-        <li>icon</li>
-        <li>icon</li>
-        <li>icon</li>
-      </ul>
+      <MarqueeWidget
+        iconName={[
+          "React",
+          "Typescript",
+          "Javascript",
+          "Nextdotjs",
+          "Nodedotjs",
+          "Tailwindcss",
+          "Express",
+          "Prisma",
+          "Postgresql",
+          "Redis",
+          "Docker",
+          "Vercel",
+          "Github",
+          "Git",
+          "Figma",
+          "Supabase",
+          "Firebase",
+          "Cloudflare",
+          "Sentry",
+        ]}
+      />
+      <MarqueeWidget
+        direction="right"
+        iconName={[
+          "Python",
+          "Flask",
+          "Fastapi",
+          "Pandas",
+          "Numpy",
+          "Opencv",
+          "Tensorflow",
+          "Pytorch",
+          "Keras",
+          "Scipy",
+          "Plotly",
+          "Jupyter",
+          "Matplotlib",
+        ]}
+      />
     </div>
   );
 };
