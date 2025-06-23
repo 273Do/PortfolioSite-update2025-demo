@@ -48,7 +48,7 @@ const CreativeSection = () => {
             CREATIVE
           </AnimationText.ScrollLeftReveal>
         </div>
-        <AnimationText.ScrollBlinking start="top center">
+        <AnimationText.ScrollBlinking start="top 65%">
           <ul className="mt-4">
             <li>Web Development</li>
             <li>Fullstack</li>
@@ -58,7 +58,7 @@ const CreativeSection = () => {
         </AnimationText.ScrollBlinking>
       </div>
       <div className="w-full">
-        <AnimationText.ScrollBlinking start="bottom bottom">
+        <AnimationText.ScrollBlinking start="bottom 85%">
           <ul className="text-end">
             <li>ML</li>
             <li>Cloud Platform</li>
