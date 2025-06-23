@@ -2,6 +2,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import Image from "next/image";
 import { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -47,7 +48,6 @@ const CardList = () => {
             trigger: sectionEndRef.current,
             start: "top top",
             scrub: true,
-
             onUpdate: (self) => {
               const progress = self.progress;
               if (progress >= 1) {
@@ -82,11 +82,23 @@ const CardList = () => {
           className="row relative my-6 flex w-full justify-center gap-6"
           key={i}
         >
-          <div className="card card-left relative overflow-hidden will-change-transform">
-            <div className="h-52 w-96 rounded-lg border border-foreground bg-slate-900"></div>
+          <div className="card card-left relative overflow-hidden grayscale duration-200 will-change-transform hover:grayscale-0">
+            <Image
+              src={`https://picsum.photos/id/${i * 7}/1920/1080`}
+              alt=""
+              className="h-52 w-96 rounded-lg"
+              width={1920}
+              height={1080}
+            />
           </div>
-          <div className="card card-right relative overflow-hidden will-change-transform">
-            <div className="h-52 w-96 rounded-lg border border-foreground bg-slate-900"></div>
+          <div className="card card-right relative overflow-hidden grayscale duration-200 will-change-transform hover:grayscale-0">
+            <Image
+              src={`https://picsum.photos/id/${i * 9}/1920/1080`}
+              alt=""
+              className="h-52 w-96 rounded-lg"
+              width={1920}
+              height={1080}
+            />
           </div>
         </div>,
       );
@@ -94,6 +106,7 @@ const CardList = () => {
 
     return rows;
   };
+
   return (
     <div
       ref={ref}
