@@ -26,12 +26,12 @@ const ScrollScramble = ({
 
   useGSAP(() => {
     gsap.to(ref.current, {
-      duration: 3,
+      duration: 1,
       scrambleText: {
         text: text,
         chars: "upperAndLowerCase",
         // revealDelay: 0.5,
-        speed: 0.1,
+        speed: 0.05,
       },
       scrollTrigger: {
         trigger: trigger || ref.current,

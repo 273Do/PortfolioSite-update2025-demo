@@ -3,5 +3,13 @@ import Reveal from "./Reveal";
 import ScrollBlinking from "./ScrollBlinking";
 import ScrollLeftReveal from "./ScrollLeftReveal";
 import ScrollReveal from "./ScrollReveal";
+import ScrollScramble from "./ScrollScramble";
 
-export { Reveal, Dynamic, ScrollReveal, ScrollBlinking, ScrollLeftReveal };
+export {
+  Reveal,
+  Dynamic,
+  ScrollReveal,
+  ScrollBlinking,
+  ScrollLeftReveal,
+  ScrollScramble,
+};
