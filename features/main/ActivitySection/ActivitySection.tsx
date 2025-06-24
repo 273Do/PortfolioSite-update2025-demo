@@ -1,18 +1,12 @@
 import AsyncLayout from "@/components/ContentScreenLayout/AsyncLayout";
-import * as AnimationText from "@/components/TextAnimation";
+import SectionTitle from "./SectionTitle";
 
-const ActivitySection = async () => {
+const ActivitySection = () => {
   return (
-    <AsyncLayout className="bg-slate-800a">
+    <AsyncLayout className="bg-slate-800">
       <div className="w-full">
-        <AnimationText.ScrollReveal
-          start="bottom bottom"
-          end="45% top"
-          className="font-semibold leading-none"
-        >
-          ACTIVITIES
-        </AnimationText.ScrollReveal>
-        <div className="flex w-full items-end justify-between mt-4">
+        <SectionTitle />
+        <div className="mt-4 flex w-full items-end justify-between">
           <ul>
             <li>Motion Graphics</li>
             <li>3DCG</li>
