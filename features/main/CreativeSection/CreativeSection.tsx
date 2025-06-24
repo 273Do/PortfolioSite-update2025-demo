@@ -66,15 +66,17 @@ const CreativeSection = () => {
           </ul>
         </AnimationText.ScrollBlinking>
         <div className="flex w-full items-end justify-between">
-          <AnimationText.ScrollBlinking start="top 95%">
-            <ul>
-              <li>I develop web apps and tools as a hobby.</li>
-              <li>
-                I am based in the Kansai region and am involved in creative
-                activities.
-              </li>
-            </ul>
-          </AnimationText.ScrollBlinking>
+          <ul>
+            <AnimationText.ScrollScramble
+              text="I develop web apps and tools as a hobby."
+              start="top 95%"
+            />
+            <AnimationText.ScrollScramble
+              text="I am based in the Kansai region and I am involved in creative
+              activities."
+              start="top 95%"
+            />
+          </ul>
           <div className="relative h-fit w-7/12">
             <AnimationText.ScrollReveal
               start="top bottom"
