@@ -1,6 +1,3 @@
-// components/gallery/RandomImageList.tsx
-"use client";
-
 import Image from "next/image";
 import { useMemo } from "react";
 
@@ -32,7 +29,7 @@ const RandomImageList = () => {
         >
           <div
             className="relative w-full grayscale transition-all duration-300 hover:grayscale-0"
-            style={{ aspectRatio: `600/${image.height}` }}
+            style={{ aspectRatio: `600 / ${image.height}` }}
           >
             <Image
               src={image.src}
