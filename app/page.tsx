@@ -10,9 +10,9 @@ export default async function Home() {
       <Main.CreativeSection />
       <div className="h-10" />
       <Main.WorksSection />
+      <Main.ActivitySection />
       <div className="h-10" />
       {/* テスト用 */}
-      <Main.HeroSection />
       <Main.HeroSection />
     </>
   );

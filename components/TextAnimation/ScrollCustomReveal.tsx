@@ -3,24 +3,27 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import SplitText from "gsap/SplitText";
+import type React from "react";
 import { useRef } from "react";
 import { ReactFitty } from "react-fitty";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
-const ScrollLeftReveal = ({
+const ScrollCustomReveal = ({
   children,
   className,
   start,
   end,
   scrub = true,
+  clipPath,
   trigger,
 }: {
-  children: string;
+  children: React.ReactNode;
   className?: string;
   start?: string;
   end?: string;
   scrub?: boolean;
+  clipPath: string[];
   trigger?: string | Element | null;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -39,10 +42,10 @@ const ScrollLeftReveal = ({
     gsap.fromTo(
       ref.current,
       {
-        clipPath: "inset(0 100% 0 0)",
+        clipPath: clipPath[0], // "inset(0 100% 0 0)",
       },
       {
-        clipPath: "inset(0 0% 0 0)",
+        clipPath: clipPath[1], // "inset(0 0% 0 0)",
         scrollTrigger: {
           trigger: trigger || ref.current,
           scrub,
@@ -66,4 +69,4 @@ const ScrollLeftReveal = ({
   );
 };
 
-export default ScrollLeftReveal;
+export default ScrollCustomReveal;

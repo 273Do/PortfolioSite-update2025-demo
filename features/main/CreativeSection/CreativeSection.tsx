@@ -39,14 +39,15 @@ const CreativeSection = () => {
           >
             CREATIVE
           </AnimationText.ScrollReveal>
-          <AnimationText.ScrollLeftReveal
+          <AnimationText.ScrollCustomReveal
             start="bottom 85%"
             end="bottom center"
             className="relative font-semibold text-foreground leading-none"
+            clipPath={["inset(0 100% 0 0)", "inset(0 0% 0 0)"]}
             trigger=".creative-section"
           >
             CREATIVE
-          </AnimationText.ScrollLeftReveal>
+          </AnimationText.ScrollCustomReveal>
         </div>
         <AnimationText.ScrollBlinking start="top 65%">
           <ul className="mt-4">
@@ -65,16 +66,18 @@ const CreativeSection = () => {
             <li>Sensor Analysis</li>
           </ul>
         </AnimationText.ScrollBlinking>
-        <div className="flex w-full items-end justify-between">
-          <AnimationText.ScrollBlinking start="top 95%">
-            <ul>
-              <li>I develop web apps and tools as a hobby.</li>
-              <li>
-                I am based in the Kansai region and am involved in creative
-                activities.
-              </li>
-            </ul>
-          </AnimationText.ScrollBlinking>
+        <div className="flex w-full items-end justify-between gap-4">
+          <ul className="w-1/2">
+            <AnimationText.ScrollScramble
+              text="I develop web apps and tools as a hobby."
+              start="top 95%"
+            />
+            <AnimationText.ScrollScramble
+              text="I am based in the Kansai region and I am involved in creative
+              activities."
+              start="top 95%"
+            />
+          </ul>
           <div className="relative h-fit w-7/12">
             <AnimationText.ScrollReveal
               start="top bottom"
@@ -83,14 +86,15 @@ const CreativeSection = () => {
             >
               WORK
             </AnimationText.ScrollReveal>
-            <AnimationText.ScrollLeftReveal
+            <AnimationText.ScrollCustomReveal
               start="bottom center"
               end="bottom top"
               className="-mb-12 relative font-semibold leading-none"
+              clipPath={["inset(0 100% 0 0)", "inset(0 0% 0 0)"]}
               trigger=".creative-section"
             >
               WORK
-            </AnimationText.ScrollLeftReveal>
+            </AnimationText.ScrollCustomReveal>
           </div>
         </div>
       </div>
