@@ -39,14 +39,15 @@ const CreativeSection = () => {
           >
             CREATIVE
           </AnimationText.ScrollReveal>
-          <AnimationText.ScrollLeftReveal
+          <AnimationText.ScrollCustomReveal
             start="bottom 85%"
             end="bottom center"
             className="relative font-semibold text-foreground leading-none"
+            clipPath={["inset(0 100% 0 0)", "inset(0 0% 0 0)"]}
             trigger=".creative-section"
           >
             CREATIVE
-          </AnimationText.ScrollLeftReveal>
+          </AnimationText.ScrollCustomReveal>
         </div>
         <AnimationText.ScrollBlinking start="top 65%">
           <ul className="mt-4">
@@ -85,14 +86,15 @@ const CreativeSection = () => {
             >
               WORK
             </AnimationText.ScrollReveal>
-            <AnimationText.ScrollLeftReveal
+            <AnimationText.ScrollCustomReveal
               start="bottom center"
               end="bottom top"
               className="-mb-12 relative font-semibold leading-none"
+              clipPath={["inset(0 100% 0 0)", "inset(0 0% 0 0)"]}
               trigger=".creative-section"
             >
               WORK
-            </AnimationText.ScrollLeftReveal>
+            </AnimationText.ScrollCustomReveal>
           </div>
         </div>
       </div>

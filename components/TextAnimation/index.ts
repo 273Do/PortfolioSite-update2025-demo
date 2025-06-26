@@ -1,7 +1,7 @@
 import Dynamic from "./Dynamic";
 import Reveal from "./Reveal";
 import ScrollBlinking from "./ScrollBlinking";
-import ScrollLeftReveal from "./ScrollLeftReveal";
+import ScrollCustomReveal from "./ScrollCustomReveal";
 import ScrollReveal from "./ScrollReveal";
 import ScrollScramble from "./ScrollScramble";
 
@@ -10,6 +10,6 @@ export {
   Dynamic,
   ScrollReveal,
   ScrollBlinking,
-  ScrollLeftReveal,
+  ScrollCustomReveal,
   ScrollScramble,
 };
