@@ -11,8 +11,8 @@ export default async function Home() {
       <div className="h-10" />
       <Main.WorksSection />
       <Main.ActivitySection />
+      <div className="h-10" />
       {/* テスト用 */}
-      {/* <div className="h-10" /> */}
       <Main.HeroSection />
     </>
   );
