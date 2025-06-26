@@ -65,8 +65,8 @@ const CreativeSection = () => {
             <li>Sensor Analysis</li>
           </ul>
         </AnimationText.ScrollBlinking>
-        <div className="flex w-full items-end justify-between">
-          <ul>
+        <div className="flex w-full items-end justify-between gap-4">
+          <ul className="w-1/2">
             <AnimationText.ScrollScramble
               text="I develop web apps and tools as a hobby."
               start="top 95%"
