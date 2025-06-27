@@ -33,6 +33,7 @@ export default function RootLayout({
         <Layout.ScrollProgressBar />
         <SmoothScroller />
         {children}
+        <Layout.ContactSection />
       </body>
     </html>
   );
