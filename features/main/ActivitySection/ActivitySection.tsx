@@ -4,7 +4,7 @@ import SectionTitle from "./SectionTitle";
 
 const ActivitySection = async () => {
   return (
-    <>
+    <div className="m-10">
       <div>
         <div className="sticky top-0 z-20 w-full bg-background">
           <div className="h-30"></div>
@@ -46,7 +46,7 @@ const ActivitySection = async () => {
         but I also like creating things with friends. My motto is “just give it
         a try,” and I value taking on new challenges.
       </p>
-    </>
+    </div>
   );
 };
 
