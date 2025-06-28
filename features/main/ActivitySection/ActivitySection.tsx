@@ -4,7 +4,7 @@ import SectionTitle from "./SectionTitle";
 
 const ActivitySection = async () => {
   return (
-    <>
+    <div className="m-10">
       <div>
         <div className="sticky top-0 z-20 w-full bg-background">
           <div className="h-30"></div>
@@ -36,9 +36,7 @@ const ActivitySection = async () => {
           </ul>
         </div>
         <ImageList />
-        <div className="sticky bottom-0 z-10 w-full bg-background">
-          <div className="h-10"></div>
-        </div>
+        <div className="sticky bottom-0 z-10 h-10 w-full bg-background"></div>
       </div>
       <p className="w-3/5">
         I am someone who enjoys making things as a hobby. I also enjoy playing
@@ -46,7 +44,7 @@ const ActivitySection = async () => {
         but I also like creating things with friends. My motto is “just give it
         a try,” and I value taking on new challenges.
       </p>
-    </>
+    </div>
   );
 };
 

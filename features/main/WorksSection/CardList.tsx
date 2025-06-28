@@ -130,7 +130,7 @@ const CardList = () => {
             <p>I enjoy making Production.</p>
           </div>
           <div className="mt-20 font-semibold text-2xl">
-            <p>NO DEVELOP, NO LIFE</p>
+            <p>NO CREATIVE, NO LIFE</p>
           </div>
         </div>
       </div>

@@ -21,7 +21,7 @@ const CreativeSection = () => {
   }, []);
 
   return (
-    <ClientLayout className="creative-section">
+    <ClientLayout className="creative-section m-10">
       <div className="w-full">
         <div className="flex w-full items-center justify-between">
           <AnimationText.ScrollBlinking start="top center">

@@ -3,7 +3,7 @@ import * as AnimationText from "@/components/TextAnimation";
 
 const HeroSection = async () => {
   return (
-    <AsyncLayout>
+    <AsyncLayout className="m-10">
       <AnimationText.ScrollBlinking>
         <p className="right-0 mt-1">Scroll</p>
       </AnimationText.ScrollBlinking>

@@ -49,7 +49,7 @@ const NoticeList = () => {
   }, [selectNotice.year, prevYear]);
   return (
     <>
-      <div className="w-1/5">
+      <div className="w-1/5 ">
         <div className="-mt-2 flex items-center justify-start font-semibold text-[11vw] leading-none">
           <div className="flex">
             <p>`</p>
