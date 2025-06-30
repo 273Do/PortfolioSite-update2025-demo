@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+// import MainScene from "@/features/layouts/Three/MainScene";
+import dynamic from "next/dynamic";
 import * as Layout from "@/features/layouts";
 import SmoothScroller from "@/features/layouts/SmoothScroller";
+import MainCanvas from "@/features/layouts/Three/MainCanvas";
+import MainScene from "@/features/layouts/Three/MainScene";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,6 +33,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} scrollbar-hidden font-sans text-lg antialiased`}
       >
+        <MainCanvas className="fixed top-0" />
         <Layout.Header />
         <Layout.ScrollProgressBar />
         <SmoothScroller />
