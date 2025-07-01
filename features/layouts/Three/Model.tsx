@@ -1,26 +1,21 @@
 "use client";
-import { Edges, MeshTransmissionMaterial, useGLTF } from "@react-three/drei";
-import { useFrame, useThree } from "@react-three/fiber";
 import {
-  Depth,
-  Displace,
-  Fresnel,
-  Gradient,
-  LayerMaterial,
-  Noise,
-  Normal,
-} from "lamina";
+  Edges,
+  // MeshTransmissionMaterial,
+  useGLTF,
+} from "@react-three/drei";
+import { useFrame, useThree } from "@react-three/fiber";
+import { Depth, Fresnel, LayerMaterial, Noise } from "lamina";
 import { useRef } from "react";
-import * as THREE from "three";
-import { MeshStandardNodeMaterial } from "three/webgpu";
+import type * as THREE from "three";
 
 export const Model = () => {
   const { nodes } = useGLTF("./model/logo.glb");
 
   const { camera, mouse } = useThree(); // ビューポートの幅を取得
   const gradient = 0.5; // グラデーションの強さを調整する値
-  const ref = useRef<THREE.Mesh>(null!);
-  const gradient_ref = useRef<THREE.Mesh>(null!);
+  const ref = useRef<THREE.Mesh | null>(null);
+  const gradient_ref = useRef<THREE.Mesh | null>(null);
 
   useFrame(() => {
     const targetX = -mouse.x * 1;
@@ -35,7 +30,9 @@ export const Model = () => {
     const sin = Math.sin(state.clock.elapsedTime / 0.8);
     const cos = Math.cos(state.clock.elapsedTime / 0.8);
 
-    const layers = (gradient_ref.current as any).layers as any[];
+    const layers =
+      (gradient_ref.current as { layers: { origin: THREE.Vector3 }[] } | null)
+        ?.layers ?? [];
     if (layers && layers.length >= 4) {
       layers[0].origin.set(cos / 2, 2, 2);
       layers[1].origin.set(cos, sin, cos);
