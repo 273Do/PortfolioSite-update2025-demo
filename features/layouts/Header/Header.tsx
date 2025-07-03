@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const Header = () => {
   return (
-    <div className="fixed right-0 left-0 z-100 flex h-10 w-full items-center justify-between px-10 mix-blend-difference">
+    <div className="fixed right-0 left-0 z-200 flex h-10 w-full items-center justify-between px-10 mix-blend-difference">
       <Image
         className="dark:invert"
         src="/svg/Logo.svg"
@@ -13,7 +13,7 @@ const Header = () => {
         height={38}
         priority
       />
-      <div className="flex text-slate-50">
+      <div className="flex gap-1 text-slate-50">
         <Button variant="ghost" size="icon" className="cursor-pointer">
           <Sparkles />
         </Button>
