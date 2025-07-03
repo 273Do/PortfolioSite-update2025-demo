@@ -10,7 +10,7 @@ import { Model } from "./Model";
 
 const MainCanvas = ({ className }: { className?: string }) => {
   return (
-    <div className={`h-screen w-screen ${className}`}>
+    <div className={`z-50 h-screen w-screen ${className}`}>
       <Canvas
         camera={{ position: [0, 0, 3], fov: 50 }}
         gl={{
