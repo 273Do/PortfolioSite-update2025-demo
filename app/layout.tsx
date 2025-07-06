@@ -30,7 +30,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} scrollbar-hidden font-sans text-lg antialiased`}
       >
-        <MainCanvas className="fixed top-0" />
+        <MainCanvas className="logo-3d fixed top-0" />
         <Layout.Header />
         <Layout.ScrollProgressBar />
         <SmoothScroller />
