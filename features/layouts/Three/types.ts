@@ -1,5 +1,7 @@
+import type { MaterialType } from "@/contexts/types";
+
 interface ModelMaterialProps {
-  material: "wireframe" | "metal" | "lamina";
+  material: MaterialType;
   // biome-ignore lint/suspicious/noExplicitAny: usage required for lamina Depth ref
   depth: React.RefObject<any>;
 }

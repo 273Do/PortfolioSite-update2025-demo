@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { MaterialProvider } from "@/contexts/MaterialContext";
 import * as Layout from "@/features/layouts";
 import SmoothScroller from "@/features/layouts/SmoothScroller";
 import MainCanvas from "@/features/layouts/Three/MainCanvas";
@@ -30,12 +31,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} scrollbar-hidden font-sans text-lg antialiased`}
       >
-        <MainCanvas className="logo-3d fixed top-0" />
-        <Layout.Header />
-        <Layout.ScrollProgressBar />
-        <SmoothScroller />
-        {children}
-        <Layout.ContactSection />
+        <MaterialProvider>
+          <MainCanvas className="logo-3d fixed top-0" />
+          <Layout.Header />
+          <Layout.ScrollProgressBar />
+          <SmoothScroller />
+          {children}
+          <Layout.ContactSection />
+        </MaterialProvider>
       </body>
     </html>
   );
