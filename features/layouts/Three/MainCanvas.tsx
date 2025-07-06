@@ -1,14 +1,16 @@
 "use client";
 import {
-  // AsciiRenderer,
+  AsciiRenderer,
   Environment,
   Lightformer,
   // OrbitControls,
 } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import { useMaterial } from "@/contexts/MaterialContext";
 import { Model } from "./Model";
 
 const MainCanvas = ({ className }: { className?: string }) => {
+  const { material } = useMaterial();
   return (
     <div className={`z-50 h-screen w-screen ${className}`}>
       <Canvas
@@ -35,12 +37,17 @@ const MainCanvas = ({ className }: { className?: string }) => {
             }) => self.lookAt(0, 0, 0)}
           />
         </Environment>
-        {/* <AsciiRenderer
-          invert={false}
-          resolution={0.1}
-          fgColor="white"
-          bgColor="transparent"
-        /> */}
+        {material === "ascii" && (
+          <AsciiRenderer
+            invert={false}
+            resolution={0.1}
+            fgColor="#b2b2b2"
+            bgColor="transparent"
+            characters=" .:-+*%@#"
+            renderIndex={0}
+          />
+        )}
+
         {/* <OrbitControls /> */}
         {/* <EffectComposer></EffectComposer> */}
       </Canvas>

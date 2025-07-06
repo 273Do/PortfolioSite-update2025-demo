@@ -22,7 +22,7 @@ const ModelMaterial = ({ material, depth }: ModelMaterialProps) => {
           />
         </>
       );
-    case "lamina":
+    default:
       return (
         <>
           <Edges linewidth={1} scale={1} threshold={10} color="white" />
@@ -60,8 +60,8 @@ const ModelMaterial = ({ material, depth }: ModelMaterialProps) => {
           </LayerMaterial>
         </>
       );
-    default:
-      return <meshStandardMaterial color="white" />;
+    // default:
+    //   return <meshStandardMaterial color="white" />;
   }
 };
 

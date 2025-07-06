@@ -3,10 +3,13 @@ import { useGLTF } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { useRef } from "react";
 import type * as THREE from "three";
+import { useMaterial } from "@/contexts/MaterialContext";
 import ModelMaterial from "./ModelMaterial";
 
 export const Model = () => {
   const { nodes } = useGLTF("./model/logo.glb");
+
+  const { material } = useMaterial();
 
   const { camera, mouse } = useThree(); // ビューポートの幅を取得
 
@@ -41,7 +44,7 @@ export const Model = () => {
         position={[-1.5, -1.2, 0]}
         ref={ref}
       >
-        <ModelMaterial material="lamina" depth={depth} />
+        <ModelMaterial material={material} depth={depth} />
       </mesh>
     </>
   );
