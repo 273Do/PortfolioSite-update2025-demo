@@ -19,11 +19,11 @@ const CreativeSection = () => {
       markers: false,
     });
   }, []);
-
+  // TODO: pinの時にz-indexが効かない問題を解決する
   return (
     <ClientLayout className="creative-section m-10">
       <div className="w-full">
-        <div className="flex w-full items-center justify-between">
+        <div className="layer flex w-full items-center justify-between">
           <AnimationText.ScrollBlinking start="top center">
             <p>Hi, I am 273Do(Tuna-sand). </p>
           </AnimationText.ScrollBlinking>

@@ -138,3 +138,8 @@
   vertical-align: baseline;
   line-height: 1;
 }
+
+.creative-section .layer {
+  position: relative;
+  z-index: 100 !important;
+}

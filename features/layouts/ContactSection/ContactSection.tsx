@@ -13,7 +13,7 @@ const ContactSection = async () => {
   const MAIL_ADDRESS = process.env.MAIL_ADDRESS;
 
   return (
-    <div className="w-full text-secondary ">
+    <div className="w-full text-secondary">
       <AsyncLayout className="h-screen w-full bg-foreground p-10">
         <div className="flex w-full flex-col items-end">
           <div className="w-4/5">
@@ -26,14 +26,14 @@ const ContactSection = async () => {
               <a href={`mailto:${MAIL_ADDRESS}`}>{MAIL_ADDRESS}</a>
             </AnimationText.Dynamic>
           </div>
-          <div className="mt-10 flex w-full items-start justify-between">
-            <ul>
+          <div className="mt-10 flex w-full items-start justify-between text-slate-50">
+            <ul className="relative z-200 mix-blend-difference">
               <li>Home</li>
               <li>Works</li>
               <li>FAQ</li>
             </ul>
             <div className="flex flex-col gap-6 text-end">
-              <ul>
+              <ul className="relative z-200 mix-blend-difference">
                 <li>
                   {X_URL && (
                     <Link
@@ -58,7 +58,7 @@ const ContactSection = async () => {
                   )}
                 </li>
               </ul>
-              <ul>
+              <ul className="relative z-100 text-slate-50 mix-blend-difference">
                 <li>
                   {GITHUB_URL && (
                     <Link
