@@ -26,14 +26,14 @@ const ContactSection = async () => {
               <a href={`mailto:${MAIL_ADDRESS}`}>{MAIL_ADDRESS}</a>
             </AnimationText.Dynamic>
           </div>
-          <div className="mt-10 flex w-full items-start justify-between">
-            <ul className="relative z-100">
+          <div className="mt-10 flex w-full items-start justify-between text-slate-50">
+            <ul className="relative z-200 mix-blend-difference">
               <li>Home</li>
               <li>Works</li>
               <li>FAQ</li>
             </ul>
             <div className="flex flex-col gap-6 text-end">
-              <ul className="relative z-100">
+              <ul className="relative z-200 mix-blend-difference">
                 <li>
                   {X_URL && (
                     <Link
@@ -58,7 +58,7 @@ const ContactSection = async () => {
                   )}
                 </li>
               </ul>
-              <ul className="relative z-100">
+              <ul className="relative z-100 text-slate-50 mix-blend-difference">
                 <li>
                   {GITHUB_URL && (
                     <Link
