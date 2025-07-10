@@ -28,9 +28,15 @@ const ContactSection = async () => {
           </div>
           <div className="mt-10 flex w-full items-start justify-between text-slate-50">
             <ul className="relative z-200 mix-blend-difference">
-              <li>Home</li>
-              <li>Works</li>
-              <li>FAQ</li>
+              <li>
+                <Link href="/">Home</Link>
+              </li>
+              <li>
+                <Link href="/works">Works</Link>
+              </li>
+              <li>
+                <Link href="/faq">FAQ</Link>
+              </li>
             </ul>
             <div className="flex flex-col gap-6 text-end">
               <ul className="relative z-200 mix-blend-difference">

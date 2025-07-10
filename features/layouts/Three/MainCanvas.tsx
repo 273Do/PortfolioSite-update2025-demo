@@ -44,7 +44,6 @@ const MainCanvas = ({ className }: { className?: string }) => {
             fgColor="#b2b2b2"
             bgColor="transparent"
             characters=" .:-+*%@#"
-            renderIndex={0}
           />
         )}
 
