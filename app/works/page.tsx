@@ -1,15 +1,29 @@
-import AsyncLayout from "@/components/ContentScreenLayout/AsyncLayout";
+"use client";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import ClientLayout from "@/components/ContentScreenLayout/ClientLayout";
 import * as AnimationText from "@/components/TextAnimation";
 
-export default async function page() {
+gsap.registerPlugin(ScrollTrigger);
+
+export default function page() {
+  useGSAP(() => {
+    ScrollTrigger.create({
+      trigger: ".works-page",
+      start: "top 40px",
+      end: "bottom 40px",
+      pin: true,
+      scrub: true,
+      markers: false,
+    });
+  }, []);
+
   return (
-    <div className="w-full">
-      <AsyncLayout className="m-10">
+    <div className="w-full works-page my-10">
+      <ClientLayout className="m-10">
         <div className="flex w-full justify-between">
           <div className="w-8/10">
-            {/* <AnimationText.Dynamic className="pointer-events-none font-semibold leading-none">
-              WORKS[n]
-            </AnimationText.Dynamic> */}
             <AnimationText.Reveal className="-mb-12 font-semibold leading-none">
               WORKS[n]
             </AnimationText.Reveal>
@@ -18,7 +32,7 @@ export default async function page() {
             <p className="relative right-0 z-100 mt-1">Scroll</p>
           </AnimationText.ScrollBlinking>
         </div>
-      </AsyncLayout>
+      </ClientLayout>
       <div className="pointer-events-none absolute right-0 bottom-0 left-0 flex h-screen w-full items-end p-10">
         <div className="flex w-full items-end justify-between">
           <div className="z-50 flex max-w-2/5 flex-col justify-between gap-10">
